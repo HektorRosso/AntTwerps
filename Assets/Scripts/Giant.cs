@@ -4,27 +4,65 @@ using UnityEngine;
 public class Giant : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
 
-    private bool isGrounded;
+    private int contactHeavyCount = 0;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void FixedUpdate()
+    {
+        if ((!IsGrounded() || contactHeavyCount == 0) && rb.constraints != RigidbodyConstraints2D.FreezeRotation)
+        {
+            UnfreezeGiant();
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player") && isGrounded)
+        if (IsGrounded() && (collision.collider.CompareTag("Enemy") ||
+                             collision.collider.CompareTag("Ally") ||
+                             collision.collider.CompareTag("Player")))
         {
-            rb.bodyType = RigidbodyType2D.Static;
+            contactHeavyCount++;
+            FreezeGiant();
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (IsGrounded() && (collision.collider.CompareTag("Enemy") ||
+                             collision.collider.CompareTag("Ally") ||
+                             collision.collider.CompareTag("Player")))
         {
-            rb.bodyType = RigidbodyType2D.Dynamic;
+            contactHeavyCount = Mathf.Max(0, contactHeavyCount - 1);
+
+            if (contactHeavyCount == 0)
+                UnfreezeGiant();
         }
+    }
+
+    private void FreezeGiant()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX |
+                         RigidbodyConstraints2D.FreezePositionY |
+                         RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    private void UnfreezeGiant()
+    {
+        rb.bodyType = RigidbodyType2D.Dynamic;
     }
 }
