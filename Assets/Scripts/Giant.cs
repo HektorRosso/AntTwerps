@@ -12,6 +12,8 @@ public class Giant : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.mass = 1000000;
+        rb.constraints = RigidbodyConstraints2D.None;
     }
 
     private void FixedUpdate()
@@ -47,22 +49,25 @@ public class Giant : MonoBehaviour
             contactHeavyCount = Mathf.Max(0, contactHeavyCount - 1);
 
             if (contactHeavyCount == 0)
+                rb.mass = 1;
                 UnfreezeGiant();
         }
     }
 
     private void FreezeGiant()
     {
-        rb.bodyType = RigidbodyType2D.Static;
-        rb.velocity = Vector2.zero;
+        rb.mass = 1000000;
+        rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         rb.constraints = RigidbodyConstraints2D.FreezePositionX |
                          RigidbodyConstraints2D.FreezePositionY |
                          RigidbodyConstraints2D.FreezeRotation;
+        rb.bodyType = RigidbodyType2D.Static;
     }
 
     private void UnfreezeGiant()
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.constraints = RigidbodyConstraints2D.None;
     }
 }
