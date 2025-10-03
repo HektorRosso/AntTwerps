@@ -89,6 +89,6 @@ public class Giant : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.constraints = RigidbodyConstraints2D.None;
-        rb.mass = 50f;
+        rb.mass = 0.05f;
     }
 }
