@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 18fb4d4f3297ab6499ed72b465d5db76
+guid: f70797805db395340ad9e1658a170c5e
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - PlantsLetters
+  - Jugger Rock Rotated 2
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
