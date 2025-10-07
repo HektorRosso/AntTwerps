@@ -76,12 +76,12 @@ public class Giant : MonoBehaviour
 
     private void FreezeGiant()
     {
-        rb.mass = 1000000f;
-        rb.linearVelocity = Vector2.zero;
-        rb.angularVelocity = 0f;
         rb.constraints = RigidbodyConstraints2D.FreezePositionX |
                          RigidbodyConstraints2D.FreezePositionY |
                          RigidbodyConstraints2D.FreezeRotation;
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        rb.mass = 1000000f;
         rb.bodyType = RigidbodyType2D.Static;
     }
 
@@ -89,6 +89,6 @@ public class Giant : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.constraints = RigidbodyConstraints2D.None;
-        rb.mass = 0.25f;
+        rb.mass = 0.01f;
     }
 }
