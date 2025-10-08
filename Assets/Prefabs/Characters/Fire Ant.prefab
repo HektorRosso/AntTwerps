@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 3399942246601450843, guid: 904d69130f66c1b4c82425493d9bba51, type: 3}
-  explosionSound: {fileID: 0}
+  explosionSound: {fileID: 8300000, guid: bfbab497ae4425a458c8b0caa2ec6a5c, type: 3}
   explosionForce: 10
   explosionRadius: 3.75
   fallThresholdY: -5
@@ -392,6 +392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idle: {fileID: 4230423631466830630}
   scared: {fileID: 6459469051882428227}
+  scaredDelay: 0.25
+  speedThreshold: 2.5
 --- !u!1 &2810116170260455474
 GameObject:
   m_ObjectHideFlags: 0

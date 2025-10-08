@@ -29,12 +29,13 @@ public class FireAnt : MonoBehaviour
             {
                 gameChecker.HandleTargetDestroyed(gameObject);
             }
+            Destroy(gameObject);
         }
     }
 
-    void OnMouseDown()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!hasExploded)
+        if (!hasExploded && collision.gameObject.tag != "Ground" && collision.gameObject.tag != "Boulder")
         {
             Explode();
         }
