@@ -62,7 +62,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2525925461205986000}
@@ -230,6 +230,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idle: {fileID: 2996383725604982505}
   scared: {fileID: 4019484476246803484}
+  scaredDelay: 0.25
+  speedThreshold: 2.5
 --- !u!1 &2626078196412560213
 GameObject:
   m_ObjectHideFlags: 0

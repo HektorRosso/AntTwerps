@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951c63f86c30cdb44952b17c35e99769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallThresholdY: -5
+  fallThresholdY: -7.5
