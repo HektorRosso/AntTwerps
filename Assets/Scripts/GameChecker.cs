@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using TMPro;
 
 public class GameChecker : MonoBehaviour
 {
@@ -19,11 +20,29 @@ public class GameChecker : MonoBehaviour
     private bool hasWon = false;
 
     public GameObject winCanvas;
+    public GameObject loseCanvas;
+    public TextMeshProUGUI reasonText;
+    public TextMeshProUGUI countdownText;
+
+    private List<GameObject> allies = new List<GameObject>();
+    private int allyCount = 0;
+    private int fallenAllies = 0;
+
+    public AudioSource audioSource;
+    public AudioClip tickSound;
+    public AudioClip victoryMusic;
+    public AudioClip defeatMusic;
+
+    private int lastSecondPlayed = -1;
 
     void Start()
     {
+        GameObject[] allyArray = GameObject.FindGameObjectsWithTag("Ally");
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] fireAnts = GameObject.FindGameObjectsWithTag("FireAnt");
+
+        allies.AddRange(allyArray);
+        allyCount = allies.Count;
 
         trackedObjects.AddRange(enemies);
         trackedObjects.AddRange(fireAnts);
@@ -31,7 +50,7 @@ public class GameChecker : MonoBehaviour
         totalTargets = trackedObjects.Count;
         handledTargets = 0;
 
-        Debug.Log("Tracking " + totalTargets + " total objects.");
+        Debug.Log("Tracking " + totalTargets + " enemies and fire ants.");
     }
 
     void Update()
@@ -48,13 +67,93 @@ public class GameChecker : MonoBehaviour
                 playerHasFallen = true;
                 Debug.Log("Player has fallen. Game Over!");
                 Time.timeScale = 0f;
+
+                if (reasonText != null)
+                {
+                    reasonText.text = "THE BLUE ANT FELL OFF THE SCREEN";
+                }
+
+                if (loseCanvas != null)
+                    loseCanvas.SetActive(true);
+
+                if (audioSource != null && defeatMusic != null)
+                {
+                    audioSource.Stop();
+                    audioSource.clip = defeatMusic;
+                    audioSource.loop = false;
+                    audioSource.Play();
+                }
+
                 return;
+            }
+        }
+
+        if (!playerHasFallen && allyCount > 0)
+        {
+            List<GameObject> fallenAlliesList = new List<GameObject>();
+
+            foreach (GameObject ally in allies)
+            {
+                if (ally != null && ally.transform.position.y < fallThresholdY)
+                {
+                    fallenAlliesList.Add(ally);
+                }
+            }
+
+            foreach (GameObject fallenAlly in fallenAlliesList)
+            {
+                allies.Remove(fallenAlly);
+                fallenAllies++;
+
+                if ((allyCount == 1 && fallenAllies >= 1) ||
+                    (allyCount >= 2 && fallenAllies >= allyCount))
+                {
+                    playerHasFallen = true;
+                    Debug.Log("Ally/Allies fell. Game Over!");
+                    Time.timeScale = 0f;
+
+                    if (reasonText != null)
+                    {
+                        if (allyCount == 1)
+                            reasonText.text = "A GREEN ANT FELL OFF THE SCREEN";
+                        else
+                            reasonText.text = "ALL GREEN ANTS FELL OFF THE SCREEN";
+                    }
+
+                    if (loseCanvas != null)
+                        loseCanvas.SetActive(true);
+
+                    if (audioSource != null && defeatMusic != null)
+                    {
+                        audioSource.Stop();
+                        audioSource.clip = defeatMusic;
+                        audioSource.loop = false;
+                        audioSource.Play();
+                    }
+
+                    return;
+                }
             }
         }
 
         if (countdownActive && !hasWon && !playerHasFallen)
         {
             countdownTimer -= Time.deltaTime;
+
+            if (countdownText != null)
+            {
+                int secondsLeft = Mathf.CeilToInt(countdownTimer);
+                countdownText.text = secondsLeft.ToString();
+
+                if (secondsLeft != lastSecondPlayed && secondsLeft > 0)
+                {
+                    if (audioSource != null && tickSound != null)
+                    {
+                        audioSource.PlayOneShot(tickSound);
+                    }
+                    lastSecondPlayed = secondsLeft;
+                }
+            }
 
             if (countdownTimer <= 0f)
             {
@@ -65,6 +164,17 @@ public class GameChecker : MonoBehaviour
 
                 if (winCanvas != null)
                     winCanvas.SetActive(true);
+
+                if (countdownText != null)
+                    countdownText.text = "";
+
+                if (audioSource != null && victoryMusic != null)
+                {
+                    audioSource.Stop();
+                    audioSource.clip = victoryMusic;
+                    audioSource.loop = false;
+                    audioSource.Play();
+                }
 
                 return;
             }
