@@ -25,13 +25,13 @@ public class GameChecker : MonoBehaviour
     public TextMeshProUGUI countdownText;
 
     private List<GameObject> allies = new List<GameObject>();
-    private int allyCount = 0;
     private int fallenAllies = 0;
 
     public AudioSource audioSource;
     public AudioClip tickSound;
     public AudioClip victoryMusic;
     public AudioClip defeatMusic;
+    public AudioClip screamSound;
 
     private int lastSecondPlayed = -1;
 
@@ -42,7 +42,6 @@ public class GameChecker : MonoBehaviour
         GameObject[] fireAnts = GameObject.FindGameObjectsWithTag("FireAnt");
 
         allies.AddRange(allyArray);
-        allyCount = allies.Count;
 
         trackedObjects.AddRange(enemies);
         trackedObjects.AddRange(fireAnts);
@@ -88,7 +87,7 @@ public class GameChecker : MonoBehaviour
             }
         }
 
-        if (!playerHasFallen && allyCount > 0)
+        if (!playerHasFallen && allies.Count > 0)
         {
             List<GameObject> fallenAlliesList = new List<GameObject>();
 
@@ -105,20 +104,14 @@ public class GameChecker : MonoBehaviour
                 allies.Remove(fallenAlly);
                 fallenAllies++;
 
-                if ((allyCount == 1 && fallenAllies >= 1) ||
-                    (allyCount >= 2 && fallenAllies >= allyCount))
+                if (fallenAllies >= 1)
                 {
                     playerHasFallen = true;
-                    Debug.Log("Ally/Allies fell. Game Over!");
+                    Debug.Log("An ally fell. Game Over!");
                     Time.timeScale = 0f;
 
                     if (reasonText != null)
-                    {
-                        if (allyCount == 1)
-                            reasonText.text = "A GREEN ANT FELL OFF THE SCREEN";
-                        else
-                            reasonText.text = "ALL GREEN ANTS FELL OFF THE SCREEN";
-                    }
+                        reasonText.text = "A GREEN ANT FELL OFF THE SCREEN";
 
                     if (loseCanvas != null)
                         loseCanvas.SetActive(true);

@@ -10,6 +10,8 @@ public class FireAnt : MonoBehaviour
 
     [Header("Fall Settings")]
     public float fallThresholdY = -5f;
+    public AudioClip screamSound;
+    public AudioSource screamAudioSource;
 
     private bool hasExploded = false;
 
@@ -18,6 +20,11 @@ public class FireAnt : MonoBehaviour
     void Start()
     {
         gameChecker = FindFirstObjectByType<GameChecker>();
+
+        if (screamAudioSource != null && screamSound != null)
+        {
+            screamAudioSource.clip = screamSound;
+        }
     }
 
     void Update()
@@ -25,11 +32,16 @@ public class FireAnt : MonoBehaviour
         if (!hasExploded && transform.position.y < fallThresholdY)
         {
             hasExploded = true;
+
+            if (screamAudioSource != null && screamSound != null)
+            {
+                screamAudioSource.Play();
+            }
+
             if (gameChecker != null)
             {
                 gameChecker.HandleTargetDestroyed(gameObject);
             }
-            Destroy(gameObject);
         }
     }
 
