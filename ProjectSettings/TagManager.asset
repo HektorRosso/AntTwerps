@@ -9,6 +9,7 @@ TagManager:
   - Boulder
   - FireAnt
   - Ground
+  - Giant
   layers:
   - Default
   - TransparentFX

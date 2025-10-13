@@ -31,7 +31,6 @@ public class GameChecker : MonoBehaviour
     public AudioClip tickSound;
     public AudioClip victoryMusic;
     public AudioClip defeatMusic;
-    public AudioClip screamSound;
 
     private int lastSecondPlayed = -1;
 

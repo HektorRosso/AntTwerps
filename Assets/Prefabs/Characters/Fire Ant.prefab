@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 872990296331224552}
   - component: {fileID: 7668281410790878826}
   - component: {fileID: 937592766720607251}
+  - component: {fileID: 6361115460499329902}
   m_Layer: 0
   m_Name: Fire Ant
   m_TagString: FireAnt
@@ -378,9 +379,7 @@ MonoBehaviour:
   explosionSound: {fileID: 8300000, guid: bfbab497ae4425a458c8b0caa2ec6a5c, type: 3}
   explosionForce: 10
   explosionRadius: 3.75
-  fallThresholdY: -5
-  screamSound: {fileID: 8300000, guid: 51289b30300e7e74abb7a0a68ea875f8, type: 3}
-  screamAudioSource: {fileID: 937592766720607251}
+  fallThresholdY: -7.5
 --- !u!114 &7668281410790878826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,9 +405,9 @@ AudioSource:
   m_GameObject: {fileID: 2716047283482466878}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 51289b30300e7e74abb7a0a68ea875f8, type: 3}
-  m_Resource: {fileID: 8300000, guid: 51289b30300e7e74abb7a0a68ea875f8, type: 3}
+  OutputAudioMixerGroup: {fileID: 9169611321994308910, guid: 5f5d0544accfbfa49b070babd040ecda, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -494,6 +493,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6361115460499329902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716047283482466878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d77bbe982e87504e833dd32c37517b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallThresholdY: -7.5
+  audioSource: {fileID: 937592766720607251}
+  screamClip: {fileID: 8300000, guid: 51289b30300e7e74abb7a0a68ea875f8, type: 3}
+  screamPitch: 1
 --- !u!1 &2810116170260455474
 GameObject:
   m_ObjectHideFlags: 0

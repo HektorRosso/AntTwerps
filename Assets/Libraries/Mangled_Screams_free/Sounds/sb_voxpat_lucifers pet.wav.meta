@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e16d056af7c1ede42a3141c3723bbdf4
+guid: 2ea3aa707c86a2341a413d6284ff2013
 AudioImporter:
   externalObjects: {}
   serializedVersion: 8
@@ -21,3 +21,10 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 64088
+  packageName: Mangled Screams (Free)
+  packageVersion: 1.0
+  assetPath: Assets/Libraries/Mangled_Screams_free/Sounds/sb_voxpat_lucifers pet.wav
+  uploadId: 734597
