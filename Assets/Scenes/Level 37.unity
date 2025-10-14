@@ -570,6 +570,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadNextLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 1126008600402405969, guid: 3fffdd4826f9fe245af77efc45d49dd6, type: 3}
+      propertyPath: maxSpawns
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2917218326854216473, guid: 3fffdd4826f9fe245af77efc45d49dd6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

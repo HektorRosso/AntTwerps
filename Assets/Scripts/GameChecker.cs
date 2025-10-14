@@ -34,6 +34,8 @@ public class GameChecker : MonoBehaviour
 
     private int lastSecondPlayed = -1;
 
+    [SerializeField] private SpawnPlayer spawnPlayer;
+
     void Start()
     {
         GameObject[] allyArray = GameObject.FindGameObjectsWithTag("Ally");
@@ -49,6 +51,20 @@ public class GameChecker : MonoBehaviour
         handledTargets = 0;
 
         Debug.Log("Tracking " + totalTargets + " enemies and fire ants.");
+
+        if (spawnPlayer == null)
+        {
+            spawnPlayer = GameObject.FindFirstObjectByType<SpawnPlayer>();
+        }
+
+        if (spawnPlayer != null)
+        {
+            spawnPlayer.gameChecker = this;
+        }
+        else
+        {
+            Debug.LogWarning("SpawnPlayer not found in scene!");
+        }
     }
 
     void Update()
@@ -205,6 +221,28 @@ public class GameChecker : MonoBehaviour
                 countdownActive = true;
                 countdownTimer = winCountdownDuration;
             }
+        }
+    }
+
+    public void TriggerLoss(string reason)
+    {
+        if (Time.timeScale == 0f) return;
+
+        Debug.Log("Game Over: " + reason);
+        Time.timeScale = 0f;
+
+        if (reasonText != null)
+            reasonText.text = reason;
+
+        if (loseCanvas != null)
+            loseCanvas.SetActive(true);
+
+        if (audioSource != null && defeatMusic != null)
+        {
+            audioSource.Stop();
+            audioSource.clip = defeatMusic;
+            audioSource.loop = false;
+            audioSource.Play();
         }
     }
 

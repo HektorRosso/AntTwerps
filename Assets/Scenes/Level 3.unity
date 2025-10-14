@@ -465,6 +465,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1126008600402405969, guid: 3fffdd4826f9fe245af77efc45d49dd6, type: 3}
+      propertyPath: maxSpawns
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6974057679852601238, guid: 3fffdd4826f9fe245af77efc45d49dd6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.05258
@@ -526,7 +530,7 @@ GameObject:
   - component: {fileID: 1769536241}
   - component: {fileID: 1769536240}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TutorialText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -546,10 +550,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 859649921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 600, y: 225}
-  m_SizeDelta: {x: 500, y: 50}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -75}
+  m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1769536240
 MonoBehaviour:
@@ -574,10 +578,11 @@ MonoBehaviour:
   m_text: 'GREEN ANTS ARE GOOD!
 
 
-    BE CAREFUL NOT TO PUSH THEM OFF THE SCREEN!'
+    BE CAREFUL NOT TO PUSH ANY OF THEM OFF THE
+    SCREEN!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 99294bda75b43284fb27b59b6b75dc2d, type: 2}
-  m_sharedMaterial: {fileID: 5811209169634803745, guid: 99294bda75b43284fb27b59b6b75dc2d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2533bbb203d5aa646ab260243c2ff4b6, type: 2}
+  m_sharedMaterial: {fileID: 7066674150345249254, guid: 2533bbb203d5aa646ab260243c2ff4b6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
