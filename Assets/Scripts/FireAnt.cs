@@ -36,7 +36,7 @@ public class FireAnt : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!hasExploded && collision.gameObject.tag != "Ground" && collision.gameObject.tag != "Boulder")
+        if (!hasExploded && collision.gameObject.tag != "Ground" && collision.gameObject.tag != "Boulder" && collision.gameObject.tag != "SmallBoulder" && collision.gameObject.tag != "Wall")
         {
             Explode();
         }

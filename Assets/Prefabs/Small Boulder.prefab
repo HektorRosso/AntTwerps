@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 887104909642563780, guid: a804ff28f09a1f246925ce318169d8ab, type: 3}
       propertyPath: m_Name
-      value: SmallBoulder Variant
+      value: Small Boulder
       objectReference: {fileID: 0}
     - target: {fileID: 1634665219576018800, guid: a804ff28f09a1f246925ce318169d8ab, type: 3}
       propertyPath: m_Mass

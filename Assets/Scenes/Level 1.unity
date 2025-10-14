@@ -575,6 +575,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743533887}
   m_CullTransparentMesh: 1
+--- !u!82 &911693943 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1868776130762445751, guid: 3fffdd4826f9fe245af77efc45d49dd6, type: 3}
+  m_PrefabInstance: {fileID: 2250574048991774682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1260486644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,11 +1180,11 @@ PrefabInstance:
     - target: {fileID: 1868776130762445751, guid: 3fffdd4826f9fe245af77efc45d49dd6, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 9169611321994308910, guid: 5f5d0544accfbfa49b070babd040ecda, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3741334476907185503, guid: 3fffdd4826f9fe245af77efc45d49dd6, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 911693943}
     - target: {fileID: 3741334476907185503, guid: 3fffdd4826f9fe245af77efc45d49dd6, type: 3}
       propertyPath: screamSound
       value: 

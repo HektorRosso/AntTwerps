@@ -248,8 +248,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallThresholdY: -5
   audioSource: {fileID: 8822619296476190451}
-  screamClip: {fileID: 0}
-  screamPitch: 1
+  screamClip: {fileID: 8300000, guid: 7514324acbad45f4a82b44b509b8f221, type: 3}
+  screamPitch: 0.75
 --- !u!82 &8822619296476190451
 AudioSource:
   m_ObjectHideFlags: 0
@@ -264,12 +264,12 @@ AudioSource:
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.75
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

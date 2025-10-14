@@ -54,7 +54,6 @@ MonoBehaviour:
   tickSound: {fileID: 0}
   victoryMusic: {fileID: 0}
   defeatMusic: {fileID: 0}
-  screamSound: {fileID: 0}
 --- !u!82 &3814624708628076683
 AudioSource:
   m_ObjectHideFlags: 0
@@ -64,7 +63,7 @@ AudioSource:
   m_GameObject: {fileID: 7858513984823326057}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 9169611321994308910, guid: 5f5d0544accfbfa49b070babd040ecda, type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0

@@ -10,6 +10,8 @@ TagManager:
   - FireAnt
   - Ground
   - Giant
+  - Wall
+  - SmallBoulder
   layers:
   - Default
   - TransparentFX
