@@ -10,7 +10,6 @@ public class SpawnPlayer : MonoBehaviour
     private GameObject currentPlayer;
     private int spawnCount = 0;
     private bool hasLost = false;
-    private bool mouseOverButton = false;
 
     [HideInInspector] public GameChecker gameChecker;
 
