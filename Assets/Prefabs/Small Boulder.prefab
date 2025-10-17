@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Small Boulder
       objectReference: {fileID: 0}
+    - target: {fileID: 887104909642563780, guid: a804ff28f09a1f246925ce318169d8ab, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1634665219576018800, guid: a804ff28f09a1f246925ce318169d8ab, type: 3}
       propertyPath: m_Mass
       value: 0.01
@@ -71,6 +75,10 @@ PrefabInstance:
     - target: {fileID: 6984640647507792985, guid: a804ff28f09a1f246925ce318169d8ab, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730210556341540022, guid: a804ff28f09a1f246925ce318169d8ab, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

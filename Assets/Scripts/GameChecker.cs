@@ -184,6 +184,8 @@ public class GameChecker : MonoBehaviour
                     audioSource.Play();
                 }
 
+                ShowHappyFaces();
+
                 return;
             }
         }
@@ -256,6 +258,30 @@ public class GameChecker : MonoBehaviour
             PlayerPrefs.SetInt("UnlockedLevel", currentLevel + 1);
             PlayerPrefs.Save();
             Debug.Log("New level unlocked: " + (currentLevel + 1));
+        }
+    }
+
+    private void ShowHappyFaces()
+    {
+        if (player != null)
+        {
+            FaceAnimation faceAnim = player.GetComponent<FaceAnimation>();
+            if (faceAnim != null)
+            {
+                faceAnim.ShowHappy();
+            }
+        }
+
+        foreach (GameObject ally in allies)
+        {
+            if (ally != null)
+            {
+                FaceAnimation faceAnim = ally.GetComponent<FaceAnimation>();
+                if (faceAnim != null)
+                {
+                    faceAnim.ShowHappy();
+                }
+            }
         }
     }
 }

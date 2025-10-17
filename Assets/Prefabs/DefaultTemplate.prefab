@@ -1588,8 +1588,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1704,7 +1704,7 @@ MonoBehaviour:
   tickSound: {fileID: 8300000, guid: ded760460b761454e81871aebff05afb, type: 3}
   victoryMusic: {fileID: 8300000, guid: 3de02b66b483301469a1f738f0d2e1b0, type: 3}
   defeatMusic: {fileID: 8300000, guid: f841fff4a8676c24497a78ff9d8ab95a, type: 3}
-  spawnPlayer: {fileID: 0}
+  spawnPlayer: {fileID: 1126008600402405969}
 --- !u!82 &1868776130762445751
 AudioSource:
   m_ObjectHideFlags: 0

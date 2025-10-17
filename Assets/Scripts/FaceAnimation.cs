@@ -1,18 +1,32 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class FaceAnimation : MonoBehaviour
 {
+    [Header("Face GameObjects")]
     public GameObject idle;
     public GameObject scared;
+    public GameObject hit;
+    public GameObject happy;
 
+    [Header("Scared Settings")]
     public float scaredDelay = 0.25f;
     public float speedThreshold = 2.5f;
+
+    [Header("Hit Detection")]
+    public float hitImpactThreshold = 7f;
+    public float hitDisplayTime = 0.3f;
+
+    [Header("Hit Sound Settings")]
+    public AudioSource audioSource;
+    public AudioClip hitSound;
+    public float hitSoundPitch = 1f;
 
     private bool isGrounded = true;
     private float scaredTimer = 0f;
     private bool scaredTimerRunning = false;
-
     private Rigidbody2D rb;
+    private Coroutine hitCoroutine;
 
     private void Start()
     {
@@ -22,6 +36,12 @@ public class FaceAnimation : MonoBehaviour
 
     private void Update()
     {
+        if (hit != null && hit.activeSelf)
+            return;
+
+        if (happy != null && happy.activeSelf)
+            return;
+
         if (rb != null && rb.linearVelocity.magnitude > speedThreshold)
         {
             scaredTimerRunning = false;
@@ -57,6 +77,12 @@ public class FaceAnimation : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+
+            float impactForce = collision.relativeVelocity.magnitude;
+            if (impactForce >= hitImpactThreshold)
+            {
+                TriggerHitReaction();
+            }
         }
     }
 
@@ -72,11 +98,55 @@ public class FaceAnimation : MonoBehaviour
     {
         if (idle != null) idle.SetActive(true);
         if (scared != null) scared.SetActive(false);
+        if (hit != null) hit.SetActive(false);
+        if (happy != null) happy.SetActive(false);
     }
 
     private void ShowScared()
     {
         if (idle != null) idle.SetActive(false);
         if (scared != null) scared.SetActive(true);
+        if (hit != null) hit.SetActive(false);
+        if (happy != null) happy.SetActive(false);
+    }
+
+    private void ShowHit()
+    {
+        if (idle != null) idle.SetActive(false);
+        if (scared != null) scared.SetActive(false);
+        if (hit != null) hit.SetActive(true);
+        if (happy != null) happy.SetActive(false);
+    }
+    public void ShowHappy()
+    {
+        if (idle != null) idle.SetActive(false);
+        if (scared != null) scared.SetActive(false);
+        if (hit != null) hit.SetActive(false);
+        if (happy != null) happy.SetActive(true);
+    }
+
+    private void TriggerHitReaction()
+    {
+        if (hitCoroutine != null)
+            StopCoroutine(hitCoroutine);
+
+        PlayHitSound();
+        hitCoroutine = StartCoroutine(ShowHitBriefly());
+    }
+
+    private IEnumerator ShowHitBriefly()
+    {
+        ShowHit();
+        yield return new WaitForSeconds(hitDisplayTime);
+        ShowIdle();
+    }
+
+    private void PlayHitSound()
+    {
+        if (audioSource != null && hitSound != null)
+        {
+            audioSource.pitch = hitSoundPitch;
+            audioSource.PlayOneShot(hitSound);
+        }
     }
 }
