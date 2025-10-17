@@ -71,7 +71,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -152,6 +152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 5434478841294938254, guid: 47f8f89a823c86046861057d8923eb43, type: 3}
+  maxSpawns: 3
+  spawnCounterText: {fileID: 0}
+  gameChecker: {fileID: 0}
 --- !u!114 &-7055551836802934621
 MonoBehaviour:
   m_ObjectHideFlags: 0
