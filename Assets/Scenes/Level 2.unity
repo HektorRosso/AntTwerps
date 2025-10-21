@@ -176,11 +176,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ARMORED RED ANTS ARE HEAVY AND WILL NEVER BUDGE
+  m_text: 'ARMORED RED ANTS ARE HEAVY AND WILL NOT BUDGE
 
 
-    PUSH THE BOULDER
-    ONTO THEM TO KNOCK THEM OFF'
+    PUSH THE BOULDER ONTO
+    THEM TO KNOCK THEM OFF'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2533bbb203d5aa646ab260243c2ff4b6, type: 2}
   m_sharedMaterial: {fileID: 7066674150345249254, guid: 2533bbb203d5aa646ab260243c2ff4b6, type: 2}

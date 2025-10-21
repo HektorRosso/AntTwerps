@@ -12,6 +12,7 @@ TagManager:
   - Giant
   - Wall
   - SmallBoulder
+  - Log
   layers:
   - Default
   - TransparentFX

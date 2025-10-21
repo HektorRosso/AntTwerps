@@ -661,7 +661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6338727581027843433, guid: 8d48109be8d4ce04c952a4c0eca2dbed, type: 3}
       propertyPath: m_TagString
-      value: Ground
+      value: Log
       objectReference: {fileID: 0}
     - target: {fileID: 8143425250742325856, guid: 8d48109be8d4ce04c952a4c0eca2dbed, type: 3}
       propertyPath: m_LocalScale.x
