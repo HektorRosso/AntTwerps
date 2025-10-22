@@ -234,6 +234,7 @@ MonoBehaviour:
   idle: {fileID: 2996383725604982505}
   scared: {fileID: 4019484476246803484}
   hit: {fileID: 4600756083143845519}
+  happy: {fileID: 0}
   scaredDelay: 0.25
   speedThreshold: 2.5
   hitImpactThreshold: 7
@@ -253,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d77bbe982e87504e833dd32c37517b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallThresholdY: -5
+  fallThresholdY: -7.5
   audioSource: {fileID: 8794737569852642874}
   screamClip: {fileID: 8300000, guid: 0c267b407ee3a864aa940d20217384bc, type: 3}
   screamPitch: 0.75

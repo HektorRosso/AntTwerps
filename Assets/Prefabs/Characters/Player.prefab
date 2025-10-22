@@ -903,7 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d77bbe982e87504e833dd32c37517b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallThresholdY: -5
+  fallThresholdY: -7.5
   audioSource: {fileID: 1762905370406391246}
   screamClip: {fileID: 8300000, guid: fba2a6725e7fc7942a0551a65063d66b, type: 3}
   screamPitch: 3

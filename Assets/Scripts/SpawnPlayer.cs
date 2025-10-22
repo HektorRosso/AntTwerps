@@ -51,7 +51,7 @@ public class SpawnPlayer : MonoBehaviour
         {
             Vector3 pos = inputWorldPos.Value;
 
-            if (pos.x >= -9f && pos.x <= 9f && pos.y >= -5f && pos.y <= 5f)
+            if (pos.x >= -12.5f && pos.x <= 12.5f && pos.y >= -7f && pos.y <= 7f)
             {
                 RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
                 if (hit.collider != null)
@@ -62,6 +62,8 @@ public class SpawnPlayer : MonoBehaviour
 
                 if (spawnCount >= maxSpawns)
                 {
+                    spawnCount++;
+                    UpdateSpawnUI();
                     hasLost = true;
                     if (gameChecker != null)
                         gameChecker.TriggerLoss("THE NUMBER OF CLICKS EXCEEDED THE MAX LIMIT");
