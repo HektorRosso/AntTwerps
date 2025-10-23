@@ -241,7 +241,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CLICK ANYWHERE ON YOUR SCREEN TO SPAWN A BLUE AN. CLICK ANYWHERE AGAIN
+  m_text: 'CLICK ANYWHERE ON YOUR SCREEN TO SPAWN A BLUE ANT. CLICK ANYWHERE AGAIN
     TO RESPAWN THE BLUE ANT
 
 
