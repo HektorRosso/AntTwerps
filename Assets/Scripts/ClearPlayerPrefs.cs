@@ -9,8 +9,10 @@ public class ClearPlayerPrefs : MonoBehaviour
         Debug.Log("All PlayerPrefs cleared!");
     }
     
+    /*
     void Start()
     {
         ClearAllPrefs();
     }
+    */
 }

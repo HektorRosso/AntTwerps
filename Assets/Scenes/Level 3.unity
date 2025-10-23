@@ -574,6 +574,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7055286948228666455, guid: 3fffdd4826f9fe245af77efc45d49dd6, type: 3}
+      propertyPath: m_text
+      value: LEVEL 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9141582766911526712, guid: 3fffdd4826f9fe245af77efc45d49dd6, type: 3}
       propertyPath: m_Name
       value: DefaultTemplate
@@ -617,7 +621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -75}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1769536240
@@ -640,11 +644,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GREEN ANTS ARE GOOD!
-
-
-    BE CAREFUL NOT TO PUSH ANY OF THEM OFF THE
-    SCREEN!'
+  m_text: GREEN ANTS ARE GOOD. BE CAREFUL NOT TO PUSH ANY OF THEM OFF THE SCREEN!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2533bbb203d5aa646ab260243c2ff4b6, type: 2}
   m_sharedMaterial: {fileID: 7066674150345249254, guid: 2533bbb203d5aa646ab260243c2ff4b6, type: 2}
