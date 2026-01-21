@@ -18,7 +18,6 @@ public class FireAnt : MonoBehaviour
     void Start()
     {
         gameChecker = FindFirstObjectByType<GameChecker>();
-
     }
 
     void Update()

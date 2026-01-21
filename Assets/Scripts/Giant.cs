@@ -40,7 +40,7 @@ public class Giant : MonoBehaviour
         }
 
         if (IsGrounded() && (collision.collider.CompareTag("Enemy") ||
-                             collision.collider.CompareTag("Ally") ||
+                             collision.collider.CompareTag("Friend") ||
                              collision.collider.CompareTag("Player")))
         {
             contactHeavyCount++;
@@ -64,7 +64,7 @@ public class Giant : MonoBehaviour
         }
 
         if (IsGrounded() && (collision.collider.CompareTag("Enemy") ||
-                             collision.collider.CompareTag("Ally") ||
+                             collision.collider.CompareTag("Friend") ||
                              collision.collider.CompareTag("Player")))
         {
             contactHeavyCount = Mathf.Max(0, contactHeavyCount - 1);

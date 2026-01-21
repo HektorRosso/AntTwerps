@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
-  - Ally
   - Boulder
   - FireAnt
   - Ground
@@ -13,6 +12,8 @@ TagManager:
   - Wall
   - SmallBoulder
   - Log
+  - Friend
+  - Ally
   layers:
   - Default
   - TransparentFX

@@ -24,8 +24,8 @@ public class GameChecker : MonoBehaviour
     public TextMeshProUGUI reasonText;
     public TextMeshProUGUI countdownText;
 
-    private List<GameObject> allies = new List<GameObject>();
-    private int fallenAllies = 0;
+    private List<GameObject> friends = new List<GameObject>();
+    private int fallenFriends = 0;
 
     public AudioSource audioSource;
     public AudioClip tickSound;
@@ -38,11 +38,11 @@ public class GameChecker : MonoBehaviour
 
     void Start()
     {
-        GameObject[] allyArray = GameObject.FindGameObjectsWithTag("Ally");
+        GameObject[] friendArray = GameObject.FindGameObjectsWithTag("Friend");
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] fireAnts = GameObject.FindGameObjectsWithTag("FireAnt");
 
-        allies.AddRange(allyArray);
+        friends.AddRange(friendArray);
 
         trackedObjects.AddRange(enemies);
         trackedObjects.AddRange(fireAnts);
@@ -102,27 +102,27 @@ public class GameChecker : MonoBehaviour
             }
         }
 
-        if (!playerHasFallen && allies.Count > 0)
+        if (!playerHasFallen && friends.Count > 0)
         {
-            List<GameObject> fallenAlliesList = new List<GameObject>();
+            List<GameObject> fallenFriendsList = new List<GameObject>();
 
-            foreach (GameObject ally in allies)
+            foreach (GameObject friend in friends)
             {
-                if (ally != null && ally.transform.position.y < fallThresholdY)
+                if (friend != null && friend.transform.position.y < fallThresholdY)
                 {
-                    fallenAlliesList.Add(ally);
+                    fallenFriendsList.Add(friend);
                 }
             }
 
-            foreach (GameObject fallenAlly in fallenAlliesList)
+            foreach (GameObject fallenFriend in fallenFriendsList)
             {
-                allies.Remove(fallenAlly);
-                fallenAllies++;
+                friends.Remove(fallenFriend);
+                fallenFriends++;
 
-                if (fallenAllies >= 1)
+                if (fallenFriends > friends.Count)
                 {
                     playerHasFallen = true;
-                    Debug.Log("An ally fell. Game Over!");
+                    Debug.Log("All friends fell. Game Over!");
                     Time.timeScale = 0f;
 
                     if (reasonText != null)
@@ -272,11 +272,11 @@ public class GameChecker : MonoBehaviour
             }
         }
 
-        foreach (GameObject ally in allies)
+        foreach (GameObject friend in friends)
         {
-            if (ally != null)
+            if (friend != null)
             {
-                FaceAnimation faceAnim = ally.GetComponent<FaceAnimation>();
+                FaceAnimation faceAnim = friend.GetComponent<FaceAnimation>();
                 if (faceAnim != null)
                 {
                     faceAnim.ShowHappy();
