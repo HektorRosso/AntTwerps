@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MonsterAnt : MonoBehaviour
+public class TuskedAnt : MonoBehaviour
 {
     public float fallThresholdY = 7.5f;
 

@@ -93,7 +93,7 @@ public class SpawnPlayer : MonoBehaviour
         if (spawnCounterText != null)
         {
             int spawnsUsed = spawnCount;
-            spawnCounterText.text = $"PAR: {spawnsUsed} / {maxSpawns}";
+            spawnCounterText.text = $"{spawnsUsed}/{maxSpawns}";
         }
     }
 }
