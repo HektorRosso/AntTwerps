@@ -1583,8 +1583,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: LEVEL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2533bbb203d5aa646ab260243c2ff4b6, type: 2}
-  m_sharedMaterial: {fileID: 7066674150345249254, guid: 2533bbb203d5aa646ab260243c2ff4b6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b673c0c3c7bbf41468a1dc1ba3d61f1c, type: 2}
+  m_sharedMaterial: {fileID: -1033871376568013599, guid: b673c0c3c7bbf41468a1dc1ba3d61f1c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1717,10 +1717,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'PAR: 3 / 3'
+  m_text: 'PAR:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2533bbb203d5aa646ab260243c2ff4b6, type: 2}
-  m_sharedMaterial: {fileID: 7066674150345249254, guid: 2533bbb203d5aa646ab260243c2ff4b6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5a5e2675e0cf56b45b3b392219c69bae, type: 2}
+  m_sharedMaterial: {fileID: 1161884290388214909, guid: 5a5e2675e0cf56b45b3b392219c69bae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2005,10 +2005,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SCORE: 1000'
+  m_text: 'SCORE:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2533bbb203d5aa646ab260243c2ff4b6, type: 2}
-  m_sharedMaterial: {fileID: 7066674150345249254, guid: 2533bbb203d5aa646ab260243c2ff4b6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5a5e2675e0cf56b45b3b392219c69bae, type: 2}
+  m_sharedMaterial: {fileID: 1161884290388214909, guid: 5a5e2675e0cf56b45b3b392219c69bae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2230,6 +2230,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 5434478841294938254, guid: 47f8f89a823c86046861057d8923eb43, type: 3}
   maxSpawns: 3
   spawnCounterText: {fileID: 3209408311729480448}
+  scoreText: {fileID: 0}
+  score: 0
   gameChecker: {fileID: 0}
 --- !u!114 &6044943312191488392
 MonoBehaviour:
