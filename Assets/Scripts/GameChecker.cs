@@ -119,7 +119,7 @@ public class GameChecker : MonoBehaviour
                 friends.Remove(fallenFriend);
                 fallenFriends++;
 
-                if (fallenFriends > friends.Count)
+                if (fallenFriends >= 1)
                 {
                     playerHasFallen = true;
                     Debug.Log("All friends fell. Game Over!");

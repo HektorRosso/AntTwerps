@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 156019621475780638}
   - component: {fileID: 2581324412322324705}
   - component: {fileID: 8794737569852642874}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Tusked Ant
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932599bdd22d5ce4fa0b4141ea7f8fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallThresholdY: 7.5
+  fallThresholdY: -7.5
 --- !u!82 &8794737569852642874
 AudioSource:
   m_ObjectHideFlags: 0

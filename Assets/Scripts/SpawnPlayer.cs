@@ -6,11 +6,9 @@ public class SpawnPlayer : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private int maxSpawns = 3;
     [SerializeField] private TextMeshProUGUI spawnCounterText;
-    [SerializeField] private TextMeshProUGUI scoreText;
 
     private GameObject currentPlayer;
     private int spawnCount = 0;
-    public int score = 0;
     private bool hasLost = false;
 
     [HideInInspector] public GameChecker gameChecker;

@@ -10,11 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 887104909642563780, guid: a804ff28f09a1f246925ce318169d8ab, type: 3}
       propertyPath: m_Name
-      value: Small Boulder
+      value: Small Snail Shell
       objectReference: {fileID: 0}
     - target: {fileID: 887104909642563780, guid: a804ff28f09a1f246925ce318169d8ab, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 887104909642563780, guid: a804ff28f09a1f246925ce318169d8ab, type: 3}
+      propertyPath: m_TagString
+      value: Snail Shell
       objectReference: {fileID: 0}
     - target: {fileID: 1634665219576018800, guid: a804ff28f09a1f246925ce318169d8ab, type: 3}
       propertyPath: m_Mass

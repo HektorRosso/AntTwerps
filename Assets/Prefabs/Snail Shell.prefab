@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6704976846550338830}
   - component: {fileID: 1634665219576018800}
   m_Layer: 3
-  m_Name: Boulder
-  m_TagString: Boulder
+  m_Name: Snail Shell
+  m_TagString: Snail Shell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

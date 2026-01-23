@@ -5,15 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
-  - Boulder
   - FireAnt
   - Ground
-  - Giant
-  - Wall
-  - SmallBoulder
   - Log
   - Friend
-  - Ally
+  - Snail Shell
   layers:
   - Default
   - TransparentFX

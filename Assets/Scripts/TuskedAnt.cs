@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TuskedAnt : MonoBehaviour
 {
-    public float fallThresholdY = 7.5f;
+    public float fallThresholdY = -7.5f;
 
     private GameChecker gameChecker;
 
@@ -27,6 +27,11 @@ public class TuskedAnt : MonoBehaviour
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Friend")
         {
             Destroy(collision.gameObject);
+
+            if (collision.gameObject.tag == "Player")
+                gameChecker.TriggerLoss("THE BLUE ANT GOT EATEN BY A TUSKED ANT");
+            else
+                gameChecker.TriggerLoss("A GREEN ANT GOT EATEN BY A TUSKED ANT");
         }
     }
 }
