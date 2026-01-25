@@ -176,12 +176,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tusked ants like to devour good ants they come into contact with.
+  m_text: 'Tusked ants devour good ants they come into contact with.
 
 
-    They
-    must be avoided at all costs. Use the evil ants and snail shells to knock them
-    off.'
+    They must
+    be avoided at all costs. Use the evil ants and snail shells to knock them off.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a5e2675e0cf56b45b3b392219c69bae, type: 2}
   m_sharedMaterial: {fileID: 1161884290388214909, guid: 5a5e2675e0cf56b45b3b392219c69bae, type: 2}

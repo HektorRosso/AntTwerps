@@ -102,8 +102,8 @@ GameObject:
   - component: {fileID: 5724322020903766995}
   - component: {fileID: 872990296331224552}
   - component: {fileID: 7668281410790878826}
-  - component: {fileID: 937592766720607251}
   - component: {fileID: 6361115460499329902}
+  - component: {fileID: 937592766720607251}
   m_Layer: 0
   m_Name: Fire Ant
   m_TagString: FireAnt
@@ -404,6 +404,22 @@ MonoBehaviour:
   audioSource: {fileID: 937592766720607251}
   hitSound: {fileID: 8300000, guid: c33501ba9e3722a4a8547b9d9ff11cca, type: 3}
   hitSoundPitch: 2
+--- !u!114 &6361115460499329902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716047283482466878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d77bbe982e87504e833dd32c37517b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallThresholdY: -7.5
+  audioSource: {fileID: 937592766720607251}
+  screamClip: {fileID: 8300000, guid: fba2a6725e7fc7942a0551a65063d66b, type: 3}
+  screamPitch: 2
 --- !u!82 &937592766720607251
 AudioSource:
   m_ObjectHideFlags: 0
@@ -501,22 +517,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6361115460499329902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2716047283482466878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d77bbe982e87504e833dd32c37517b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallThresholdY: -7.5
-  audioSource: {fileID: 937592766720607251}
-  screamClip: {fileID: 8300000, guid: fba2a6725e7fc7942a0551a65063d66b, type: 3}
-  screamPitch: 2
 --- !u!1 &4230423631466830630
 GameObject:
   m_ObjectHideFlags: 0

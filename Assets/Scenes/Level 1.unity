@@ -385,7 +385,7 @@ MonoBehaviour:
 
 
     The
-    good ants, including the blue ant, must remain.'
+    good ants, which include the blue ant, must remain.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a5e2675e0cf56b45b3b392219c69bae, type: 2}
   m_sharedMaterial: {fileID: 1161884290388214909, guid: 5a5e2675e0cf56b45b3b392219c69bae, type: 2}
